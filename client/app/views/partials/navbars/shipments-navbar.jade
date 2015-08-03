@@ -1,0 +1,16 @@
+.shipments-nav
+	nav.navbar.navbar-default.navbar-no-color
+		.container-fluid  
+			form.navbar-form.navbar-left(name='searchBarForm', ng-submit="getSearch()")
+				.input-group.navbar-left
+					input.form-control(type='text', placeholder="{{'searchByTrackingOrArticle' | translate}}", ng-model='search')
+					span.input-group-btn
+						button.btn.ch-btn-skin.btn-sm(type='submit', translate='') search	
+				ul.nav.navbar-nav.navbar-right
+					li.dropdown
+						a.dropdown-toggle(id="dropdownMenu1", data-toggle="dropdown", aria-expanded="true")
+							| {{'filters' | translate}}:&nbsp;
+							span.caret
+						ul.dropdown-menu(role="menu" aria-labelledby="dropdownMenu1")
+							li(ng-repeat="filter in filters", role="presentation")
+								a(href='/') {{filter.name}} &nbsp;

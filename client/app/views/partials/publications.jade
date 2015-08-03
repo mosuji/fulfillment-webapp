@@ -1,0 +1,72 @@
+div(ng-include='"app/views/partials/navbars/publications-navbar.html"')
+.item-list.information-list.row
+	ul.list-group
+		li.ch-loading(ng-if='items.length == 0 && paging.total != 0')
+		li.list-group-item.row
+			.checkbox
+				input(type='checkbox')
+			button.btn.ch-btn-skin.btn-sm
+				span.glyphicon.glyphicon-cog
+				span.caret
+			span.small.pull-right.dropdown
+				a.dropdown-toggle(id="dropdownMenu2", data-toggle="dropdown", aria-expanded="true")
+					| {{'filters' | translate}}:&nbsp;
+					span.caret
+				ul.dropdown-menu(role="menu" aria-labelledby="dropdownMenu2")
+					li(ng-repeat="filter in filters", role="presentation")
+						a(href='/') {{filter.name}} &nbsp;
+							li(ng-repeat="value in values") {{filter.values.name}}
+			span.small.pull-right Publicaciones {{paging.offset * 50 + 1}} a {{paging.offset * 50 + items.length}} de {{paging.total}}       
+
+		li.list-group-item.row.no-bottom-padding(ng-repeat='item in items')
+			.checkbox
+				input(type='checkbox')
+			.columns-container
+				img.item-image(ng-src='{{item.thumbnail}}')   
+				.item-main
+					.row  
+						a(href="{{item.permalink}}").item-title {{item.title}}
+					.row
+						span.item-listing Publicación Oro Profesional  |
+						span(ng-switch='item.shipping.free_shipping')
+							span.item-shipping(ng-switch-when='true')  {{'free_shipping' | translate}} |
+							span.item-shipping.strikethrough(ng-switch-when='false')  {{'free_shipping' | translate}} |
+						span.item-tracking  {{ '#' + idFilter(item.id) }}
+						span.item-pause
+							i.ch-icon-warning-sign
+							span.small(translate='') paused
+
+
+				.item-available
+					.row
+						span {{ '$' + item.base_price }}
+						span  x 10 {{'available' | translate}}
+					.row		
+						.well
+							i.ch-icon-truck
+							span(translate='')  in Fulfillment
+				.item-ship 
+					//- input(type='text', placeholder='0')
+					//- button(type='button', translate='') ship	
+					.ch-form-row
+						input(type='input')
+						button.btn.ch-btn-skin.btn-sm(translate='') ship
+
+
+	ul.ch-pagination
+		li
+			a(href='') Previous
+		li
+			a(href='') 1
+		li
+			a(href='') 2
+		li
+			a(href='') 3
+		li
+			a(href='') 4
+		li
+			a(href='') Next			
+
+
+
+

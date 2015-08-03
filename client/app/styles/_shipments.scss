@@ -1,0 +1,105 @@
+.shipment-list {
+	.columns-container {
+		@extend .col-sm-44;
+		@extend .col-xs-48;
+		.shipment-number {
+			@extend .col-sm-12;
+            @extend .col-xs-48;
+			font-weight: bold;
+            margin-bottom: 10px;
+		}
+		.shipment-info {
+			@extend .col-sm-15;
+            @extend .col-xs-48;
+			font-size: 12px;
+		}
+		.shipment-status {
+			@extend .col-sm-15;
+            @extend .col-xs-48;
+			font-size: 12px;
+		}
+		.shipment-detail {
+			@extend .col-sm-6;
+            @extend .col-xs-48;
+		}
+	}
+}
+
+.shipments-nav {
+    input {
+        width: 300px !important;
+    }
+    button {
+        margin-left: 10px !important;
+    }
+}
+
+.details {
+	@extend .col-xs-48;
+    padding: 0;
+    margin-left: -15px;
+    .well {
+    	margin-top: 10px;
+    }
+    .container-fluid {
+        p.negative-bottom-margin {
+            margin-bottom: -10px;
+        }
+        &.custom-offset {
+            margin-bottom: 50px;
+        }
+    }
+    .custom-heading {
+    	color: orange;
+    	margin-left: 19px;
+    	font-size: 17px;
+    }
+    .custom-offset {
+    	margin-left: 2%;
+    	margin-top: 5px;
+    	font-size: 12px
+    }
+
+    .line-products-list {
+    	@extend .col-xs-48;
+    	.product-image {
+    		@extend .item-image;
+    	}
+    	.product-main {
+    		@extend .col-sm-22;
+            @extend .col-xs-37;
+
+            .product-tracking {
+            	@extend .text-muted;
+            	@extend .small;
+            	margin-top: 5px;
+            }
+    	}
+    	.product-quantities {
+    		@extend .col-sm-8;
+            @extend .col-xs-48;
+    		font-size: 13px;
+            margin-bottom: 10px;
+            @media (max-width: 767px) {
+                margin-left: 60px;
+            }
+    	}
+    	.product-shipment-status {
+    		@extend .col-sm-12;
+            @extend .col-xs-48;
+    		font-size: 13px;
+            @media (max-width: 767px) {
+                margin-left: 25px;
+            }
+    	}
+    }
+    .ch-icon-map-marker {
+    	color: #C1DDF5;
+    	margin-top: 0;
+    }   
+}
+
+.well {
+	border: 0;	
+	padding: 9px 19px;
+}

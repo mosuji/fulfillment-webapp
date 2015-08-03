@@ -1,0 +1,25 @@
+
+div(ng-include='"components/navbar/navbar.html"')  
+
+.left-sidebar
+	.list-group
+		.list-group-item
+				a(href="/", translate='', ui-sref='main.publications') publications
+		.list-group-item
+				a(href="/", translate='', ui-sref='main.shipments') shipments
+	.panel.panel-default
+		.panel-body.hidden-xs 
+			p 12 productos {{'toBeDelivered' | translate}}&nbsp;
+			a.bold(href="/", translate='') seeAll&nbsp;
+			button.btn.ch-btn-skin.btn-sm.margin-top-10(type='button', ng-click='openModal()', translate='') confirmShipment			
+		ul.panel-body.visible-xs
+			.list-inline
+				li 
+					span 12 productos {{'toBeDelivered' | translate}}&nbsp;
+				li.margin-top-10
+					a(href="/", translate='') seeAll&nbsp;
+				li
+					a(href="/", ng-click='openModal()', translate='') confirmShipment&nbsp; 
+
+.col-sm-38.col-xs-48.pull-right
+	div(ui-view='')

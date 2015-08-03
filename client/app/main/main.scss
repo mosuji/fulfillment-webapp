@@ -1,0 +1,172 @@
+
+a {
+    color: #0808C7;
+}
+
+.address {
+    @media (max-width: 767px) {
+        font-size: 10px;
+    }
+} 
+
+a#dropdownMenu1{
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+form >input, form > button {
+    font-size: 13px !important;
+}
+
+#logo {
+    background-image: url(../../../assets/images/logo.png);
+    background-repeat: no-repeat;
+    height: 60px;
+    width: 160px;
+    background-position-y: 10px;
+    background-size: 100%;
+    margin-left: 0;
+    margin-top: -10px;
+    background-position-x: 33%;
+}   
+
+.information-list {
+    @extend .col-sm-48;
+    .list-group-item:first-child {
+        background-color: #F3F3F3;
+        padding: 5px 15px;
+        .checkbox {
+            margin-top: 5px;
+        }
+        button {
+            margin-left: -10px;
+            .glyphicon.glyphicon-cog {
+                margin-left: -3px;
+            }
+            .caret {
+                margin-left: 5px;
+                margin-bottom: 2px;
+                margin-right: -4px;
+            }
+        }
+        span {
+            &.small {
+                padding-top: 5px;
+                &.dropdown {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}
+
+.item-image {
+    @extend .col-xs-6;
+    width: 75px;
+    height: auto;
+    margin-left: -30px;
+}
+
+.list-group-item {
+    border-width: 1px 0;
+}
+
+.margin-top-10 {
+    margin-top: 10px !important;
+}
+
+.margin-top-15 {
+    margin-top: 15px !important;
+}
+
+.margin-left-20 {
+    margin-left: 20px !important;
+}
+
+.margin-left-25 {
+    margin-left: 25px !important;
+}
+
+.margin-right-15 {
+    margin-right: 15px !important;
+}
+
+.margin-bottom-20 {
+    margin-bottom: 20px !important;
+}
+
+.modal-footer {
+    a {
+        margin-left: 10px;
+        font-size: 12px;
+    }
+}
+
+.no-bottom-padding {
+    padding-bottom: 0;
+}
+
+.input-group > input{
+    margin-top: 0;
+}
+
+.navbar-custom {
+    @extend .navbar-default;
+    background-color: #FFE600;
+}
+
+.navbar-no-color {
+    background-color: #FFFFFF;
+    border-color: #FFFFFF;
+    padding-top: 7px;
+    margin-top: -20px;
+    margin-bottom: 0px;
+}
+
+.left-sidebar {
+    @extend .col-sm-10;
+    .list-group {
+        margin-left: 30%;
+        a {
+            color: #000000;
+        }
+        .list-group-item > a {
+            word-wrap: break-word;
+        }
+    }
+    .panel {
+        margin-left: 30%;
+    }
+    @media (max-width: 992px) {
+        .list-group, .panel {
+            margin-left: 0%;
+        }
+    }
+}
+
+.strikethrough {
+    text-decoration: line-through;
+}
+
+.thing-form {
+    margin: 20px 0;
+}
+
+#banner {
+    border-bottom: none;
+    margin-top: -20px;
+}
+
+#banner h1 {
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.navbar-text {
+  margin-left: 15px;
+}

@@ -1,0 +1,36 @@
+.details
+	a(ui-sref='main.shipments') Volver a listado
+	.well Detalle del envío	{{shipmentNumber}}
+	span.custom-heading(translate='') shipment
+	.container-fluid.custom-offset
+		i(ng-class="{'ch-icon-warning-sign': inbound.status == 'received_with_differences', 'ch-icon-ok-sign': inbound.status == 'received_correctly', 'ch-icon-truck' : inbound.status == 'in_transit'}")
+		span(translate='') {{inbound.status}}
+		p.negative-bottom-margin {{'date_and_time_received' | translate}}: {{inbound.eta | date:'dd/MM/yyyy HH:mm'}}
+		p.negative-bottom-margin {{'shipping_method' | translate}}: {{inbound.shipping_method}}
+		p {{'tracking_number' | translate}}: {{ '#' + inbound.tracking_number}}
+		.margin-bottom-20(ng-include='"app/views/partials/address.html"') 
+	div(ng-include='"app/views/partials/navbars/publications-navbar.html"')
+	.line-products-list.information-list
+		ul.list-group
+			li.list-group-item.row
+				span.small.pull-right Publicaciones {{paging.offset * 50 + 1}} a {{paging.offset * 50 + inbound.lines.length}} de {{inbound.lines.length}}       
+				//-fix the paging
+			li.list-group-item.row(ng-repeat='line in inbound.lines')
+				.container-fluid
+					img.product-image(ng-src='{{line.listing.thumbnail}}')   
+					.product-main
+						.row  
+							a(href="{{line.listing.permalink}}").item-title {{line.listing.title}}
+						.row
+							span.product-tracking {{ '#' + idFilter(line.product.listing_id) }}
+					.product-quantities
+						.row 
+							span {{line.shipped_quantity}} {{'shipped_quantity' | translate}}		
+						.row 	
+							span {{line.received_quantity}} {{'received_quantity' | translate}}
+					.product-shipment-status
+						i(ng-class="{'ch-icon-warning-sign': line.listing.status == 'Recibida con diferencias', 'ch-icon-ok-sign': line.listing.status == 'Recibida correctamente'}")
+						span {{line.listing.status}}				
+
+
+

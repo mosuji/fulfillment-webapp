@@ -1,0 +1,33 @@
+div(ui-view='')
+	div(ng-include='"app/views/partials/navbars/shipments-navbar.html"')
+	.shipment-list.information-list.row
+		ul.list-group
+			li.list-group-item.row
+				span.small.pull-right.dropdown
+					a.dropdown-toggle(id="dropdownMenu2", data-toggle="dropdown", aria-expanded="true")
+						| {{'filters' | translate}}:&nbsp;
+						span.caret
+					ul.dropdown-menu(role="menu" aria-labelledby="dropdownMenu2")
+						li(ng-repeat="filter in filters", role="presentation")
+							a(href='/') {{filter.name}} &nbsp;
+								li(ng-repeat="value in values") {{filter.values.name}}
+				span.small.pull-right Envíos {{paging.offset * 50 + 1}} a {{paging.offset * 50 + shipments.length}} de {{shipments.length}}
+				//-fix the paging     
+
+			li.list-group-item.row(ng-repeat='shipment in shipments')
+				.columns-container
+					.shipment-number {{'shipment' | translate}}  &#35;{{shipment.shipmentNumber}}
+					.shipment-info
+						p {{shipment.shipping_method}}
+						p.text-muted &#35;{{shipment.shipmentNumber}}
+						p.text-muted ETA {{shipment.eta}}
+					.shipment-status
+						.well 
+							.row
+								i(ng-class="{'ch-icon-warning-sign': shipment.status == 'Recibida con diferencias', 'ch-icon-ok-sign': shipment.status == 'Recibida correctamente', 'ch-icon-truck' : shipment.status == 'En transito'}")
+								span {{shipment.status}}
+							.row
+								i.ch-icon-time(ng-show='shipment.eta') 
+								span {{ shipment.eta |  date:'dd/MM/yyyy HH:mm' }}
+					.shipment-detail 
+						a(ng-href="{{'/shipments/' + shipment.id}}", translate='') seeDetail

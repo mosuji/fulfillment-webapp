@@ -1,0 +1,29 @@
+.modal-header
+  h3.modal-title(translate='') confirmShipment
+.modal-body
+  .form-group
+    label.h5(translate='') destinationAddress
+    .address.margin-left-20 
+      span Almex Sucursal Iztapalapa <br/>
+      span Calle 26 de Enero de 1857, calle 1, lote 641 <br/> 
+      span manzana 63, Colonia Leyes de Reforma <br/>
+      span 09310 Iztapalapa, México D.F. <br/>
+      span Teléfono (55) 5600-9360
+  .form-group
+    label.h5(translate='') shipping_method
+    input.form-control(type='text')
+    span.text-muted Nombre del transporte o courrier. Por ej. DHL, FedEx, Transporte XXX  
+  .form-group
+    label.h5(translate='') tracking_number
+    input.form-control(type='text')    
+  .form-group
+    label.h5(translate='') estimated_time_of_arrival
+    input.form-control(type='text')      
+  .alert.alert-warning
+    p(translate='') warningMessage
+
+.modal-footer
+  button.btn.ch-btn-skin(ng-click="ok()", translate='') confirm
+  a(ng-click="cancel()", translate='') cancel
+
+

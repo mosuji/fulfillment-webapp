@@ -1,0 +1,65 @@
+.publication-nav {
+    input {
+        width: 200px !important;
+    }
+    button {
+        margin-left: 10px !important;
+    }
+}
+.item-list {
+    .checkbox {
+        @extend .col-xs-1;
+    }
+    .columns-container {
+        @extend .col-xs-46;
+        padding-right: 0;
+        .item-main {
+            @extend .col-sm-26;
+            @extend .col-xs-40;
+            .item-title {
+                font-size: 16px;
+            }
+            .item-listing {
+                @extend .small
+            }
+            .item-shipping {
+                @extend .small
+            }
+            .item-tracking {
+                @extend .text-muted;
+                @extend .small;
+            }
+            .item-pause {
+                .ch-icon-warning-sign {
+                    font-size: 15px;
+                }
+                span {
+                    font-size: 12px;
+                }
+            }
+        }
+        .item-available {
+            @extend .col-sm-8;
+            @extend .col-xs-48;
+            .well {
+                border: 0;  
+                padding: 4px;
+                margin-top: 5px;
+            }
+        }
+        .item-ship {
+            @extend .col-sm-9;
+            @extend .col-xs-48;
+            padding-right: 0;
+            padding-left: 45px;
+            .ch-form-row {
+                input {
+                    width: 70px;
+                }
+                button {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+div.navbar.navbar-custom.navbar-static-top
+  div.container
+    div.navbar-header
+      button.navbar-toggle(type='button', ng-click='isCollapsed = !isCollapsed')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a#logo.navbar-brand(href='/')
+
+    div#navbar-main.navbar-collapse.collapse(collapse='isCollapsed')
+      ul.nav.navbar-nav.navbar-right
+        li
+          a(ng-href='/')
+            span.visible-xs(translate='') user
+            span.hidden-xs &nbsp;
+            span.hidden-xs.glyphicon.glyphicon-user  
+        li 
+          a(ng-href='/')
+            span.hidden-xs.glyphicon.glyphicon-log-out   
+            span.visible-xs(translate='') logOut
+         li 
+          a(ng-href='/')
+            span.hidden-xs.glyphicon.glyphicon-question-sign
+            span.visible-xs(translate='') help
+
+
+//- div.navbar.navbar-custom.navbar-static-top(ng-controller='NavbarCtrl')
+//-   div.container
+//-     div.navbar-header
+//-       button.navbar-toggle(type='button', ng-click='isCollapsed = !isCollapsed')
+//-         span.sr-only Toggle navigation
+//-         span.icon-bar
+//-         span.icon-bar
+//-         span.icon-bar
+//-       a.navbar-brand(href='/')
+
+//-     div#navbar-main.navbar-collapse.collapse(collapse='isCollapsed')
+//-       ul.nav.navbar-nav
+//-         li(ng-repeat='item in menu', ng-class='{active: isActive(item.link)}')
+//-           a(ng-href='{{item.link}}') {{item.title}}          
