@@ -6,7 +6,9 @@ angular.module 'fulfillmentWebappApp', [
   'ngSanitize',
   'ui.router',
   'ui.bootstrap',
-  'pascalprecht.translate'
+  'pascalprecht.translate',
+  'angucomplete-alt',
+  'angularUtils.directives.dirPagination'
 ]
 .config ($stateProvider, $urlRouterProvider, $locationProvider) ->
   $urlRouterProvider
@@ -19,4 +21,4 @@ angular.module 'fulfillmentWebappApp', [
 	$translateProvider.useUrlLoader '/language'
 	$translateProvider.determinePreferredLanguage()
 
-.value 'ACCESS_TOKEN', 'APP_USR-1138849081739375-073112-6cb42acef736d646da63708642a2f788__C_H__-72129964'
+.value 'ACCESS_TOKEN', 'APP_USR-1138849081739375-080411-3cf2546248c10c4bd30f3fd753f6ad2f__D_C__-72129964'

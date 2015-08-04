@@ -1,3 +1,15 @@
+.shipments-nav {
+    form {
+        border: 0;
+        @media (max-width: 767px) {
+            padding: 10px 5px;
+        }
+        button {
+            margin-left: 10px !important;
+        }
+    }
+}
+
 .shipment-list {
 	.columns-container {
 		@extend .col-sm-44;
@@ -22,16 +34,10 @@
 			@extend .col-sm-6;
             @extend .col-xs-48;
 		}
+        @media (max-width: 767px) {
+            padding: 0;
+        }
 	}
-}
-
-.shipments-nav {
-    input {
-        width: 300px !important;
-    }
-    button {
-        margin-left: 10px !important;
-    }
 }
 
 .details {
@@ -81,21 +87,22 @@
     		font-size: 13px;
             margin-bottom: 10px;
             @media (max-width: 767px) {
-                margin-left: 60px;
+                margin-left: 40px;
+                margin-top: 10px;
             }
     	}
     	.product-shipment-status {
     		@extend .col-sm-12;
             @extend .col-xs-48;
     		font-size: 13px;
-            @media (max-width: 767px) {
-                margin-left: 25px;
-            }
     	}
     }
     .ch-icon-map-marker {
     	color: #C1DDF5;
     	margin-top: 0;
+    }
+    @media (max-width: 767px) {
+        margin-left: 0;
     }   
 }
 

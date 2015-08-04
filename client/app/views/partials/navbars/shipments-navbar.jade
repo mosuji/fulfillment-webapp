@@ -3,7 +3,10 @@
 		.container-fluid  
 			form.navbar-form.navbar-left(name='searchBarForm', ng-submit="getSearch()")
 				.input-group.navbar-left
-					input.form-control(type='text', placeholder="{{'searchByTrackingOrArticle' | translate}}", ng-model='search')
+					angucomplete-alt(id='shipments', placeholder="{{'searchByTrackingOrArticle' | translate}}", pause='200',
+					selected-object='selectedInbound', local-data='shipments', search-fields='tracking_number', title-field='tracking_number',
+					minlength='1', text-searching='{{"searching..." | translate}}', text-no-results='{{"notFound" | translate}}',
+					input-class='form-control', match-class='bold', ng-model='search')
 					span.input-group-btn
 						button.btn.ch-btn-skin.btn-sm(type='submit', translate='') search	
 				ul.nav.navbar-nav.navbar-right

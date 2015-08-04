@@ -39,33 +39,17 @@ div(ng-include='"app/views/partials/navbars/publications-navbar.html"')
 
 				.item-available
 					.row
-						span {{ '$' + item.base_price }}
+						span.red {{ '$' + item.base_price }}
+						sup.red 00
 						span  x 10 {{'available' | translate}}
 					.row		
 						.well
 							i.ch-icon-truck
 							span(translate='')  in Fulfillment
 				.item-ship 
-					//- input(type='text', placeholder='0')
-					//- button(type='button', translate='') ship	
 					.ch-form-row
 						input(type='input')
 						button.btn.ch-btn-skin.btn-sm(translate='') ship
-
-
-	ul.ch-pagination
-		li
-			a(href='') Previous
-		li
-			a(href='') 1
-		li
-			a(href='') 2
-		li
-			a(href='') 3
-		li
-			a(href='') 4
-		li
-			a(href='') Next			
 
 
 

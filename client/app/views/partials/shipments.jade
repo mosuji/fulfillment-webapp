@@ -16,7 +16,10 @@ div(ui-view='')
 
 			li.list-group-item.row(ng-repeat='shipment in shipments')
 				.columns-container
-					.shipment-number {{'shipment' | translate}}  &#35;{{shipment.shipmentNumber}}
+					.shipment-number 
+						span.hidden-xs{{'shipment' | translate}}  &#35;{{shipment.shipmentNumber}}
+						a.visible-xs(ng-href="{{'/shipments/' + shipment.id}}") {{'shipment' | translate}}  &#35;{{shipment.shipmentNumber}}
+
 					.shipment-info
 						p {{shipment.shipping_method}}
 						p.text-muted &#35;{{shipment.shipmentNumber}}
@@ -29,5 +32,5 @@ div(ui-view='')
 							.row
 								i.ch-icon-time(ng-show='shipment.eta') 
 								span {{ shipment.eta |  date:'dd/MM/yyyy HH:mm' }}
-					.shipment-detail 
+					.shipment-detail.hidden-xs 
 						a(ng-href="{{'/shipments/' + shipment.id}}", translate='') seeDetail

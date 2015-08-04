@@ -43,7 +43,7 @@ form >input, form > button {
             margin-top: 5px;
         }
         button {
-            margin-left: -10px;
+            margin-left: -15px;
             .glyphicon.glyphicon-cog {
                 margin-left: -3px;
             }
@@ -129,22 +129,39 @@ form >input, form > button {
 
 .left-sidebar {
     @extend .col-sm-10;
-    .list-group {
+    ul {
         margin-left: 30%;
-        a {
-            color: #000000;
+        @media (max-width: 767px) {
+            margin-left: 0%;
         }
         .list-group-item > a {
-            word-wrap: break-word;
+            li.dummy {
+                height: 10px;
+            }
+            li > a {
+                word-wrap: break-word;
+            }
+        }    
+    }
+    ul.nav {
+        a {
+            color: #000000;
         }
     }
     .panel {
         margin-left: 30%;
     }
     @media (max-width: 992px) {
-        .list-group, .panel {
+        .nav-pills, .panel {
             margin-left: 0%;
         }
+    }
+}
+
+#publications_value, #shipments_value {
+    margin-top: 0;
+    @media (min-width: 768px) {
+        width: 300px;
     }
 }
 

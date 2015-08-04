@@ -2,20 +2,25 @@
 div(ng-include='"components/navbar/navbar.html"')  
 
 .left-sidebar
-	.list-group
-		.list-group-item
-				a(href="/", translate='', ui-sref='main.publications') publications
-		.list-group-item
-				a(href="/", translate='', ui-sref='main.shipments') shipments
+	ul.nav.nav-pills.nav-stacked
+		li
+			a(href="/", translate='', ui-sref='main.publications', ng-class="{active: $uiRoute}") publications
+		li
+			a(href="/", translate='', ui-sref='main.shipments', ng-class="{active: $uiRoute}") shipments
+		li.dummy
+
 	.panel.panel-default
 		.panel-body.hidden-xs 
-			p 12 productos {{'toBeDelivered' | translate}}&nbsp;
+			p
+				span.bold 12 {{'products' | translate}}&nbsp;
+				span {{'toBeDelivered' | translate}}&nbsp;
 			a.bold(href="/", translate='') seeAll&nbsp;
 			button.btn.ch-btn-skin.btn-sm.margin-top-10(type='button', ng-click='openModal()', translate='') confirmShipment			
 		ul.panel-body.visible-xs
 			.list-inline
 				li 
-					span 12 productos {{'toBeDelivered' | translate}}&nbsp;
+					span.bold 12 {{'products' | translate}}&nbsp;
+					span {{'toBeDelivered' | translate}}&nbsp;
 				li.margin-top-10
 					a(href="/", translate='') seeAll&nbsp;
 				li
