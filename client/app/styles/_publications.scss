@@ -1,21 +1,31 @@
 .publication-nav {
-    input {
-        width: 200px !important;
-    }
-    button {
-        margin-left: 10px !important;
+    form {
+        border: 0;
+        @media (max-width: 767px) {
+            padding: 10px 5px;
+        }
+        button {
+            margin-left: 10px !important;
+        }
     }
 }
 .item-list {
     .checkbox {
         @extend .col-xs-1;
+        @media (max-width: 767px) {
+            margin: 0;
+        }
     }
     .columns-container {
         @extend .col-xs-46;
         padding-right: 0;
+        @media (max-width: 767px) {
+            padding-left: 30px;
+            margin-top: -10px;
+        }
         .item-main {
             @extend .col-sm-26;
-            @extend .col-xs-40;
+            @extend .col-xs-38;
             .item-title {
                 font-size: 16px;
             }
@@ -46,6 +56,17 @@
                 padding: 4px;
                 margin-top: 5px;
             }
+            .red {
+                @extend .bold;
+                color: #C50C0C;
+            }
+            sup.red {
+                font-size: 80%;
+            }
+            @media (max-width: 767px) {
+                text-align: center;
+                margin-top: 15px;
+            }
         }
         .item-ship {
             @extend .col-sm-9;
@@ -53,11 +74,26 @@
             padding-right: 0;
             padding-left: 45px;
             .ch-form-row {
+                // @extend .col-xs-48;
+                padding: 5px 0;                
                 input {
                     width: 70px;
                 }
                 button {
                     margin-left: 10px;
+                }
+            }
+            @media (max-width: 767px) {
+                padding-left: 0;
+                margin-bottom: 10px;
+                .ch-form-row {
+                    input {
+                        width: 65%;
+                    }
+                    button {
+                        margin-left: 5%;
+                        width: 30%;
+                    }
                 }
             }
         }
